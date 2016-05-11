@@ -4,7 +4,9 @@
 // </copyright>
 // =================================================
 
+using System;
 using System.ComponentModel.Composition;
+using System.Text;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
@@ -23,6 +25,13 @@ namespace enovaIntegrator.Client.ViewModels
                 typeof( MainViewModel ),
                 new PropertyMetadata( 12 ) );
 
+        public static readonly DependencyProperty ExceptionInfoProperty =
+            DependencyProperty.Register(
+                "ExceptionInfo",
+                typeof( string ),
+                typeof( MainViewModel ),
+                new PropertyMetadata( default(string) ) );
+
         readonly ServiceInvoker _invoker;
 
         [ImportingConstructor]
@@ -36,6 +45,12 @@ namespace enovaIntegrator.Client.ViewModels
             XmlListener = xmlListener;
             ListListener = listListener;
             RequestInfos = new CollectionView( requestInfos );
+        }
+
+        public string ExceptionInfo
+        {
+            get { return ( string ) GetValue( ExceptionInfoProperty ); }
+            set { SetValue( ExceptionInfoProperty, value ); }
         }
 
         public int FontSize
@@ -53,8 +68,13 @@ namespace enovaIntegrator.Client.ViewModels
             {
                 try
                 {
+                    ExceptionInfo = string.Empty;
                     Mouse.OverrideCursor = Cursors.Wait;
                     _invoker.Invoke( ( IRequestInfo ) p );
+                }
+                catch (Exception ex)
+                {
+                    ExceptionInfo = ex.Format( new StringBuilder() );
                 }
                 finally
                 {

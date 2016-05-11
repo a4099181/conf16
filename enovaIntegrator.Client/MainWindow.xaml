@@ -26,6 +26,11 @@
         <StatusBar DockPanel.Dock="Bottom" HorizontalContentAlignment="Stretch">
             <Slider Maximum="32" Minimum="8" Value="{Binding FontSize}" Width="200" ></Slider>
         </StatusBar>
+        <Expander DockPanel.Dock="Bottom" Header="DEBUG">
+            <ScrollViewer>
+                <TextBlock Text="{Binding ExceptionInfo}"></TextBlock>
+            </ScrollViewer>
+        </Expander>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
