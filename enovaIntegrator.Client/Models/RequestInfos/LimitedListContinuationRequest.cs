@@ -22,7 +22,7 @@ namespace enovaIntegrator.Client.Models.RequestInfos
                 new Dictionary<string, object>
                 {
                     {"TableName", "Towary"},
-                    {"SchemaName", "T"},
+                    {"SchemaName", "Produkty"},
                     {"RowCount", 5},
                     {"LastId", 3}
                 };

@@ -22,7 +22,7 @@ namespace enovaIntegrator.Client.Models.ResultProcessors
                 let innerXml = row.Element( "Xml" )
                 let innerXmlText = innerXml.Value.Substring( 1 )
                 let towar =
-                    XDocument.Parse( innerXmlText ).Element( "Artykul" )
+                    XDocument.Parse( innerXmlText ).Element( "Produkt" )
                 select new
                 {
                     id = ( string ) towar.Element( "ID" ),

@@ -24,7 +24,7 @@ namespace enovaIntegrator.Client.Models.RequestInfos
                 new Dictionary<string, object>
                 {
                     {"TableName", "Towary"},
-                    {"SchemaName", "T"},
+                    {"SchemaName", "Produkty"},
                     {"Condition", "[Kod] LIKE 'N%'"}
                 };
     }
