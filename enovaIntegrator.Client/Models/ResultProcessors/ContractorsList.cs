@@ -23,7 +23,6 @@ namespace enovaIntegrator.Client.Models.ResultProcessors
                 let innerXmlText = innerXml.Value.Substring( 1 )
                 let kontrahent =
                     XDocument.Parse( innerXmlText ).Element( "Kontrahent" )
-                where innerXml != null
                 select new
                 {
                     id = ( string ) kontrahent.Element( "ID" ),

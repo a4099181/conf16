@@ -40,7 +40,7 @@ namespace enovaIntegrator.Client.Models.RequestInfos
                 new Dictionary<string, object>
                 {
                     {"TableName", "Towary"},
-                    {"SchemaName", "Towary"},
+                    {"SchemaName", "T"},
                     {"Data", XmlData}
                 };
     }
