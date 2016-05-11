@@ -13,7 +13,7 @@ namespace enovaIntegrator.Client.Models.RequestInfos
     sealed class UpdateRequest : IRequestInfo
     {
         const string XmlData = @"<?xml version=""1.0"" encoding=""utf-8""?>
-  <Rows>
+  <UpdateParamsData><Rows>
     <Row><Xml><![CDATA[﻿<?xml version=""1.0"" encoding=""utf-8""?>
         <Towar>
             <Guid>97e7f69a-a1dc-45e1-8d3b-31082c3da1d4</Guid>
@@ -27,7 +27,7 @@ namespace enovaIntegrator.Client.Models.RequestInfos
                     <Netto>110.00</Netto>
                 </Cena>
             </Ceny>
-        </Towar>]]></Xml></Row></Rows>";
+        </Towar>]]></Xml></Row></Rows></UpdateParamsData>";
 
         public string Caption => "Aktualizacja towaru (przecena)";
 
